@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cc61369b-493c-469d-b7c2-74f55648b37f" name="Changes" comment="-valid parenthesis_all">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="cc61369b-493c-469d-b7c2-74f55648b37f" name="Changes" comment="-valid parenthesis_all&#10;-correction">
       <change beforePath="$PROJECT_DIR$/src/Stacks/ValidParenthesisAll.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Stacks/ValidParenthesisAll.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -137,7 +136,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665853831103</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="-valid parenthesis_all&#10;-correction">
+      <created>1665855759485</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1665855759485</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -154,7 +160,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="-valid parenthesis" />
     <MESSAGE value="-valid parenthesis_all" />
-    <option name="LAST_COMMIT_MESSAGE" value="-valid parenthesis_all" />
+    <MESSAGE value="-valid parenthesis_all&#10;-correction" />
+    <option name="LAST_COMMIT_MESSAGE" value="-valid parenthesis_all&#10;-correction" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/AdvancedModule$Rank.ic" NAME="Rank Coverage Results" MODIFIED="1661871293824" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
