@@ -4,7 +4,7 @@ import java.util.Stack;
 
 public class ValidParenthesisAll {
     public static void main(String[] args) {
-        String input="{([]}";
+        String input="]";
         System.out.println(isValid(input));
     }
 
@@ -13,12 +13,25 @@ public class ValidParenthesisAll {
         for(char c:s.toCharArray()){
             if(c == '(' || c == '[' ||c == '{' )
                 stack.push(c);
-            if(c==')' && !stack.isEmpty() && stack.peek()=='(')
-                stack.pop();
-            if(c=='}' && !stack.isEmpty() && stack.peek()=='{')
-                stack.pop();
-            if(c==']' && !stack.isEmpty() && stack.peek()=='[')
-                stack.pop();
+            if(c==')'){
+                if(stack.isEmpty())
+                    return false;
+                else if(stack.peek()=='(')
+                    stack.pop();
+            }
+            if(c=='}' ){
+                if(stack.isEmpty())
+                    return false;
+                else if(stack.peek()=='{')
+                    stack.pop();
+            }
+
+            if(c==']' ){
+                if(stack.isEmpty())
+                    return false;
+                else if(stack.peek()=='[')
+                    stack.pop();
+            }
         }
         return stack.isEmpty();
     }
