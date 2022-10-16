@@ -36,7 +36,7 @@ public class NearestGreater {
         return list.toString();
     }
 
-    //Nearest greater to the right
+    //Nearest greater on the right
     public static String outputFromRight(int[] arr) {
         Stack<Integer> stack = new Stack<>();
         ArrayList<Integer> list = new ArrayList<>();
