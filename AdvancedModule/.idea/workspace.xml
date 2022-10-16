@@ -1,8 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cc61369b-493c-469d-b7c2-74f55648b37f" name="Changes" comment="-valid parenthesis_all&#10;-correction">
+    <list default="true" id="cc61369b-493c-469d-b7c2-74f55648b37f" name="Changes" comment="-added Stock Span, NearestGreater and NearestSmaller">
+      <change afterPath="$PROJECT_DIR$/out/production/AdvancedModule/Stacks/NearestGreater.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/AdvancedModule/Stacks/NearestSmaller.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/AdvancedModule/Stacks/StockSpan.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/AdvancedModule/Stacks/ValidParenthesis.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/AdvancedModule/Stacks/ValidParenthesisAll.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Stacks/NearestGreater.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Stacks/NearestSmaller.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Stacks/StockSpan.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Stacks/ValidParenthesisAll.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Stacks/ValidParenthesisAll.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +28,9 @@
   <component name="Git.Settings">
     <branch-grouping />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/Stacks/NearestGreater.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -37,35 +49,9 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.appearance&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.ValidParenthesisAll">
-    <configuration name="AddBinaryString" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="BitManipulation.AddBinaryString" />
-      <module name="AdvancedModule" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="BitManipulation.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="BubbleSort" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Sorting.BubbleSort" />
-      <module name="AdvancedModule" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Sorting.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ValidParenthesis" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Stacks.ValidParenthesis" />
+  <component name="RunManager" selected="Application.NearestSmaller">
+    <configuration name="NearestGreater" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Stacks.NearestGreater" />
       <module name="AdvancedModule" />
       <extension name="coverage">
         <pattern>
@@ -77,8 +63,34 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ValidParenthesis2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Stacks.ValidParenthesis2" />
+    <configuration name="NearestSmaller" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Stacks.NearestSmaller" />
+      <module name="AdvancedModule" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Stacks.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StockSpan" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Stacks.StockSpan" />
+      <module name="AdvancedModule" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Stacks.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ValidParenthesis" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Stacks.ValidParenthesis" />
       <module name="AdvancedModule" />
       <extension name="coverage">
         <pattern>
@@ -105,11 +117,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.NearestSmaller" />
+        <item itemvalue="Application.NearestGreater" />
+        <item itemvalue="Application.StockSpan" />
         <item itemvalue="Application.ValidParenthesisAll" />
         <item itemvalue="Application.ValidParenthesis" />
-        <item itemvalue="Application.ValidParenthesis2" />
-        <item itemvalue="Application.BubbleSort" />
-        <item itemvalue="Application.AddBinaryString" />
       </list>
     </recent_temporary>
   </component>
@@ -150,7 +162,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665856170955</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="-correction">
+      <created>1665857147996</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1665857147996</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -168,7 +187,9 @@
     <MESSAGE value="-valid parenthesis" />
     <MESSAGE value="-valid parenthesis_all" />
     <MESSAGE value="-valid parenthesis_all&#10;-correction" />
-    <option name="LAST_COMMIT_MESSAGE" value="-valid parenthesis_all&#10;-correction" />
+    <MESSAGE value="-correction" />
+    <MESSAGE value="-added Stock Span, NearestGreater and NearestSmaller" />
+    <option name="LAST_COMMIT_MESSAGE" value="-added Stock Span, NearestGreater and NearestSmaller" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/AdvancedModule$Rank.ic" NAME="Rank Coverage Results" MODIFIED="1661871293824" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
