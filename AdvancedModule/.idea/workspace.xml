@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cc61369b-493c-469d-b7c2-74f55648b37f" name="Changes" comment="-git ignore" />
+    <list default="true" id="cc61369b-493c-469d-b7c2-74f55648b37f" name="Changes" comment="-first commit" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -179,7 +179,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665944589688</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="-first commit">
+      <created>1665944820177</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1665944820177</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -200,7 +207,8 @@
     <MESSAGE value="-correction" />
     <MESSAGE value="-added Stock Span, NearestGreater and NearestSmaller" />
     <MESSAGE value="-git ignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="-git ignore" />
+    <MESSAGE value="-first commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="-first commit" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/AdvancedModule$Rank.ic" NAME="Rank Coverage Results" MODIFIED="1661871293824" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
