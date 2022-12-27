@@ -4,10 +4,12 @@ public class TripletSum {
     public static void PrintTripletPairs (int[] A,int sum){
         int len=A.length;
         Arrays.sort(A);
-//        for (int x:A) {
-//            System.out.print(x+" ");
-//        }
-//        System.out.println();
+/*
+        for (int x:A) {
+            System.out.print(x+" ");
+        }
+        System.out.println();
+*/
 
         int total = 0;
         for(int i=0;i<len-3;i++){
