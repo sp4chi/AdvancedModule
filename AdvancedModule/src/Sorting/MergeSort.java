@@ -1,6 +1,10 @@
 package Sorting;
 
 public class MergeSort {
+    public static void mergeSort(int[] A){
+        int N=A.length;
+        mergeSort(A,0,N-1);
+    }
     public static void mergeSort(int[] A, int start, int end){
         //base case
         if(start>=end)
@@ -16,20 +20,38 @@ public class MergeSort {
         int N=A.length;
         int[] temp=new int[N];
         int i=start;
-        int j=mid;
+        int j=mid+1;
         int k=start;
         while( i<=mid && j<=end){
             if(A[i]<=A[j]) {
                 temp[k] = A[i];
-                k++;
                 i++;
             }
             else{
                 temp[k]=A[j];
-                k++;j++;
+                j++;
             }
+            k++;
+        }
 
+        while(i<=mid){
+            temp[k] = A[i];
+            i++; k++;
+        }
+        while(j<=end){
+            temp[k] = A[j];
+            j++;k++;
+        }
+        for(int x=start;x<=end;x++){
+            A[x] = temp[x];
+        }
+    }
 
+    public static void main(String[] args) {
+        int[] A={2,4,3,1,5,7,6};
+        mergeSort(A);
+        for(int i: A){
+            System.out.print(i+" ");
         }
     }
 
