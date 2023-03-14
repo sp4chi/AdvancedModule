@@ -14,10 +14,10 @@ public class InversionArray {
         return x+y+z;
     }
     public static int inversion(int[] A,int start, int mid,int end ) {
-        int[] temp = new int[A.length];
+        int[] temp = new int[end-start+1];
         int invCnt = 0;
         int i = start;
-        int k = start;
+        int k = 0;
         int j = mid + 1;
         while (i <= mid && j <= end) {
             if(A[i]<=A[j]){
@@ -39,8 +39,10 @@ public class InversionArray {
             temp[k] = A[j];
             j++;k++;
         }
+        k=0;
         for(int x=start;x<=end;x++){
-            A[x]=temp[x];
+            A[x]=temp[k];
+            k++;
         }
         return invCnt;
     }
