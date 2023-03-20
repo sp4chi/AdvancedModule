@@ -20,7 +20,7 @@ public class QuickSort {
         int pivot = A[end];
         int i=start;
         for(int j=start;j<end;j++){
-            if(A[j]<=pivot){
+            if(A[j]<pivot){
                 swap(A,i,j);
                 i++;
             }
@@ -31,7 +31,7 @@ public class QuickSort {
 
     public static void main(String[] args) {
         //int[] A={2,4,3,1,5,7,6};
-        int[] A={3,2,8,5,1,6,4,7,6};
+        int[] A={6,2,8,5,1,4,3,7,6};
         quickSort(A);
         for(int i: A){
             System.out.print(i+" ");
