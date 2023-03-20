@@ -1,4 +1,4 @@
-package Arrays;
+package ArrayScaler;
 
 public class ChatGPT {
         public static void main(String[] args) {

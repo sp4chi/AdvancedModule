@@ -1,4 +1,4 @@
-package Arrays;
+package ArrayScaler;
 import java.util.*;
 public class TripletSum {
     public static void PrintTripletPairs (int[] A,int sum){

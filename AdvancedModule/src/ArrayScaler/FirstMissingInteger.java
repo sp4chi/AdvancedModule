@@ -1,4 +1,4 @@
-package Arrays;
+package ArrayScaler;
 
 public class FirstMissingInteger {
     public static void swap(int[] arr,int a,int b){

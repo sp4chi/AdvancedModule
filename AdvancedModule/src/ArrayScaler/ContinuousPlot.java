@@ -1,7 +1,7 @@
-package Arrays;
+package ArrayScaler;
 
 //Along one side of a road there is a sequence of vacant plots of land. Each plot has a different area (non-zero).
-// So, the areas form a sequence A[1], A[2], … A[N]. FYou want to buy K acres of land to build a house.
+// So, the areas form a sequence A[1], A[2], … A[N]. You want to buy K acres of land to build a house.
 // You want to find a segment of contiguous plots (i.e., a subsection in the sequence) of minimum length whose sum is exactly K.
 //A=[1,2,3,4]
 //pf=[1,3,6,10]
@@ -41,11 +41,11 @@ public class ContinuousPlot {
 //        return ;
 //    }
     public static int slidingWindow(int[] A,int k){
-        int i=0; int j=0; int N=A.length; int minLength=N+1;  int sum=A[0];
-        while(j<N && j-i>-1){
+        int N=A.length; int i=0; int j=0;  int minLength=N+1;  int sum=A[0];
+        while(j<N && j-i>=0){
             if(sum<k){
-                j++;
                 sum+=A[j];
+                j++;
             } else if (sum>k) {
                 sum -= A[i];
                 i++;

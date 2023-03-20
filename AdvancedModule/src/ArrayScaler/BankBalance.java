@@ -1,4 +1,4 @@
-package Arrays;
+package ArrayScaler;
 
 import java.util.Arrays;
 //chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/http://www.mathmeth.com/tom/files/settling-debts.pdf
