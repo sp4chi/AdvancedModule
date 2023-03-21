@@ -22,8 +22,8 @@ public class RootUsingBS {
         int end = N;
         while(start<=end){
             int mid = start + (end-start)/2;
-            if(mid*mid<=N){
-                start = mid + 1;
+            if(mid <= N/mid){
+                start = (mid + 1);
                 ans = mid;
             }else{
                 end = mid - 1;
@@ -34,6 +34,6 @@ public class RootUsingBS {
 
 
     public static void main(String[] args) {
-        System.out.println(decimalPart(17,3));
+        System.out.println(IntegerPart(930675566));
     }
 }
