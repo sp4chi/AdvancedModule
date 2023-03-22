@@ -38,7 +38,7 @@ public class AggressiveCows {
     }
 
     public static void main(String[] args) {
-        int[] stalls = {1,2,4,8,9};
+        int[] stalls = {1,4,8,2,9};
         System.out.println("Max of min separation of cows:"+binarySearch(stalls,3));
     }
 }
