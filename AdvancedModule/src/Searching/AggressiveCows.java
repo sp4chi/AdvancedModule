@@ -3,7 +3,7 @@ package Searching;
 import java.util.Arrays;
 
 public class AggressiveCows {
-    //given an array containing position of stalls and C as the number of cows to place, find the maximum of minimum separation between cows.
+    /* Farmer John has built a new long farm, with N stalls. The stalls are located along a straight line at positions x1,...,xN.His C (2 <= C <= N) cows don't like this barn layout and become aggressive towards each other once put into a stall. To prevent the cows from hurting each other, Farmer wants to assign the cows to the stalls, such that the minimum distance between any two of them is as large as possible. What is the largest minimum distance? */
     public static int binarySearch(int[] stalls,int C){
         int N=stalls.length;
         Arrays.sort(stalls);
