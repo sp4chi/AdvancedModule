@@ -1,7 +1,7 @@
 package UniqueOccurence;
 
 //form: 3k+1
-public class UniqueOccurence {
+public class UniqueOccurrence {
     public static int UO(int[] A){
         int[] sum=new int[32];
         for(int x: A){
