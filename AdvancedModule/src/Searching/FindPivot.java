@@ -24,8 +24,7 @@ public class FindPivot {
         return ans;
     }
     public static void main(String[] args) {
-        //int[] A={4,5,6,7,0,1,2};
-        int[] A={5, 1, 3 };
+        int[] A={4,5,6,7,0,1,2};
         System.out.println(findingPivot(A));
     }
 }
