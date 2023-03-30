@@ -13,7 +13,7 @@ public class LCM {
 
 
     public static int gcd(int a, int b){
-        if(a== 0)
+        if(a == 0)
             return b;
         return gcd(b%a,a);
     }
@@ -23,6 +23,6 @@ public class LCM {
     }
 
     public static void main(String[] args) {
-        System.out.println(brute_lcm(2,5));
+        System.out.println(lcm(2,4));
     }
 }
