@@ -36,6 +36,8 @@ public class SpecialInteger {
         }
         return true;
     }
+    //Sliding window approach
+    //time complexity - O(N)
     public static int twoPointerApproach(int[] A, int B){
         int N = A.length;
         int i = 0;
