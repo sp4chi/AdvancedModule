@@ -1,6 +1,11 @@
 package TwoPointer;
 
 public class TwoSumEasy {
+    //Given an array of positive integers A and an integer B, find and return first continuous subarray which adds to B.
+    //
+    //If the answer does not exist return an array with a single element "-1".
+    //
+    //First sub-array means the sub-array for which starting index in minimum
     public static int[] twoPointer(int[] A, int B) {
         int N = A.length;
         int start = 0;
