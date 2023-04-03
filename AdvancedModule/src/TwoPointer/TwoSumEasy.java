@@ -1,5 +1,7 @@
 package TwoPointer;
 
+import java.util.Arrays;
+
 public class TwoSumEasy {
     //Given an array of positive integers A and an integer B, find and return first continuous subarray which adds to B.
     //
@@ -10,16 +12,10 @@ public class TwoSumEasy {
         int N = A.length;
         int start = 0;
         int end = 0;
-        int[] ans = {-1};
         int sum = A[start];
         while(end<N && start<=end){
             if(sum == B){
-                int n = end - start + 1;
-                int[] sol = new int[n];
-                for(int i=0;i<n;i++){
-                    sol[i] = A[start++];
-                }
-                return sol;
+                return Arrays.copyOfRange(A, start, end+1);
             }
             else if(sum < B){
                 end++;
@@ -37,7 +33,7 @@ public class TwoSumEasy {
                 }
             }
         }
-        return ans;
+        return new int[]{-1};
     }
 
     public static void main(String[] args) {
