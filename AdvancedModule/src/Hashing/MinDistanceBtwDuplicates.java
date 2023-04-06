@@ -19,6 +19,9 @@ public class MinDistanceBtwDuplicates {
         }
         return min;
     }
+    //Hashing Approach
+    //time - O(N)
+    //space - O(N)
     public static int minDistanceUsingHashing(int[] A){
         int N = A.length;
         int min = N;
