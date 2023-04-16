@@ -25,7 +25,6 @@ public class PatternSearch {
             }
         }
         return new int[]{cnt, startIndex};
-        //return cnt;
     }
 
     public static int getLPS(StringBuilder S) {
@@ -42,14 +41,6 @@ public class PatternSearch {
     }
 
     public static StringBuilder getPrefixString(StringBuilder S, int currentIdx) {
-/*
-        char[] prefix = new char[currentIdx+1];
-        prefix[0]=S.charAt(0);
-        for(int i=1;i<=currentIdx;i++){
-            prefix[i]= (char) (prefix[i-1]+S.charAt(i));
-        }
-        return prefix.toString();
-*/
         StringBuilder temp = new StringBuilder();
         for (int i = 0; i <= currentIdx; i++) {
             char s = S.charAt(i);
@@ -59,14 +50,6 @@ public class PatternSearch {
     }
 
     public static StringBuilder getSuffixString(StringBuilder S, int currentIdx) {
-/*
-        char[] suffix = new char[currentIdx+1];
-        suffix[currentIdx]=S.charAt(currentIdx);
-        for(int i=currentIdx;i>0;i--){
-            suffix[i] = (char) (suffix[i-1]+S.charAt(i));
-        }
-        return suffix.toString();
-*/
         StringBuilder temp = new StringBuilder();
         for (int i = 0; i <= currentIdx; i++) {
             char s = S.charAt(i);
