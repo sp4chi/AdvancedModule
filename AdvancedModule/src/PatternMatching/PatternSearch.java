@@ -1,8 +1,11 @@
 package PatternMatching;
 
 public class PatternSearch {
+    //Brute Force
+    //time - O(N^3)
+    //space - O(N)
     //chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://scaler-production-new.s3.ap-southeast-1.amazonaws.com/attachments/attachments/000/025/589/original/pattern_matching_1.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIDNNIRGHAQUQRWYA%2F20230415%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20230415T140807Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=e9ae35ed272ae766c5e644708f5cc1127606c22074d2f7c262a9f67e71768ceb
-    public static int[] countOccurrence(String S, String target) {
+    public static int[] LPSArray(String S, String target) {
         String P = target + "$" + S;
         StringBuilder sb = new StringBuilder(P);
         int N = P.length();
@@ -75,7 +78,7 @@ public class PatternSearch {
     public static void main(String[] args) {
         String S = "aabacdabac";
         String target = "abac";
-        int[] ans = countOccurrence(S, target);
+        int[] ans = LPSArray(S, target);
 
         System.out.println("target :"+target + ", occurs " + ans[0] + " times" + " and last occurrence is at index " + ans[1]);
 
