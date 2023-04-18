@@ -58,12 +58,46 @@ public class PatternSearch {
         return temp.reverse();
     }
 
-    public static void main(String[] args) {
-        String S = "aabacdabac";
-        String target = "abac";
-        int[] ans = LPSArray(S, target);
 
-        System.out.println("target :"+target + ", occurs " + ans[0] + " times" + " and last occurrence is at index " + ans[1]);
+    //Efficient Approach- Knuth-Morris-Pratt
+    //time - O(N)
+    public static int[] LPSArrayEfficient(String S){
+        int N = S.length();
+        int[] LPS = new int[N];
+        LPS[0] = 0;
+        //building lps array
+        for(int i=1;i<N;i++){
+            int x = LPS[i-1];
+            while(S.charAt(i)!=S.charAt(x) ){
+                if(x == 0) {
+                    x = -1;
+                    break;
+                }
+                x = LPS[x-1];
+            }
+            LPS[i] = x + 1;
+        }
+        return LPS;
+    }
+    public static int countingOccurence(String text, String pattern){
+        String S = pattern+"$"+text;
+        int[] LPS = LPSArrayEfficient(S);
+        int N = S.length();
+        int cnt  = 0;
+        for(int i=0;i<N;i++){
+            if(LPS[i] == pattern.length()){
+                cnt++;
+            }
+        }
+        return cnt;
+    }
+    public static void main(String[] args) {
+        String text = "aabacdabac";
+        String pattern = "abac";
+        /*int[] ans = LPSArray(S, target);
+
+        System.out.println("pattern :"+pattern + ", occurs " + ans[0] + " times" + " and last occurrence is at index " + ans[1]);*/
+        System.out.println("pattern "+ pattern+" occured "+countingOccurence(text,pattern)+ " times.");
 
     }
 }
