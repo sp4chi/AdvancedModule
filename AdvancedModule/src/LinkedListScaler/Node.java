@@ -1,7 +1,7 @@
 package LinkedListScaler;
 
 public class Node {
-    //static Node head = null;
+    //Node head = null;
     Node head = null;
     int data;
     static int length;
@@ -89,6 +89,7 @@ public class Node {
             temp = temp.next;
         }
         System.out.print("Null");
+        System.out.println();
     }
 
     void delete(int position) {
@@ -130,6 +131,16 @@ public class Node {
         head = fast;
     }
 
+    Node getMid(Node head) {
+        if (head.next == null) return null;
+        Node fast = head, slow = head, lastslow = head;
+        while (fast != null && fast.next != null) {
+            lastslow = slow;
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return lastslow;
+    }
     Node deleteMid(Node head) {
         if (head.next == null) return null;
         Node fast = head, slow = head, lastslow = head;
