@@ -9,7 +9,7 @@ public class MergeTwoSortedLinkedList {
             return a;
         }
         Node head ;
-        if(a.data<b.data){
+        if(a.data<=b.data){
             head=a;
             head.next = merge(a.next,b);
         }else{
