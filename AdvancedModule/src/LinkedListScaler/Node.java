@@ -1,7 +1,8 @@
 package LinkedListScaler;
 
 public class Node {
-    static Node head = null;
+    //static Node head = null;
+    Node head = null;
     int data;
     static int length;
 
@@ -24,8 +25,8 @@ public class Node {
 
     //set head
     Node setHead(Node head) {
-        Node.head = head;
-        return Node.head;
+        this.head = head;
+        return this.head;
     }
 
     //insert at front of LL, time = O(1)
@@ -129,8 +130,8 @@ public class Node {
         head = fast;
     }
 
-    void deleteMid() {
-        if (head.next == null) return;
+    Node deleteMid(Node head) {
+        if (head.next == null) return null;
         Node fast = head, slow = head, lastslow = head;
         while (fast != null && fast.next != null) {
             lastslow = slow;
@@ -139,6 +140,7 @@ public class Node {
         }
         lastslow.next = lastslow.next.next;
         length--;
+        return head;
     }
 
     static int length(Node head) {
@@ -150,4 +152,21 @@ public class Node {
         }
         return cnt;
     }
+
+    //print kth node from the end
+    int kthNodeFromEnd(Node head, int k) {
+        Node fast = head;
+        Node slow = head;
+        int cnt = 0;
+        while (cnt < k) {
+            fast = fast.next;
+            cnt++;
+        }
+        while (fast != null) {
+            fast = fast.next;
+            slow = slow.next;
+        }
+        return slow != null ? slow.data : 0;
+    }
+
 }
