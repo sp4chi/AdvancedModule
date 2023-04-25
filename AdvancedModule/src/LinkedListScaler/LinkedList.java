@@ -13,10 +13,11 @@ public class LinkedList {
         n.put(5,666);
         n.print(n.getHead());
         //n.delete(5);
-        n.deleteMid();
+//        n.deleteMid(n.getHead());
         System.out.println();
-        n.print(n.getHead());
-        int N = Node.length;
+        System.out.println("kth element from the end is: "+n.kthNodeFromEnd(n.getHead(),4));
+//        n.print(n.getHead());
+//       int N = Node.length;
         System.out.println();
 //        System.out.print("Deleting all the nodes from the end!! And printing is N^2 algorithm...");
 //        for(int i=N;i>=1;i--){
@@ -25,7 +26,7 @@ public class LinkedList {
 //            n.print(Node.getHead());
 //            System.out.print("  length is "+n.length);
 //        }
-        n.reverse();
+//        n.reverse();
 //        System.out.println("Reversing the list.. ");
 //        //n.print();
 //        System.out.println();
