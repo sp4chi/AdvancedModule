@@ -1,6 +1,6 @@
 package LinkedListScaler;
 
-public class MergeTwoSortedLinkedList {
+public class MergeLL {
     public static Node merge(Node a, Node b){
         if(a == null){
             return b;
