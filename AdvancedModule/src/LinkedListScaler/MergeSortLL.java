@@ -45,9 +45,9 @@ public class MergeSortLL {
         a.add(11);
         a.add(22);
         a.add(33);
-        a.add(44);
         a.add(55);
-        a.add(66);
+        a.add(55);
+        a.add(11);
         a.add(-1);
         a.add(9000);
         a.add(88);
