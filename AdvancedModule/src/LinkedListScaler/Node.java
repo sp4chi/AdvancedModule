@@ -84,6 +84,7 @@ public class Node {
     //printing the LL
     void print(Node head) {
         Node temp = head;
+        System.out.print("Head->");
         while (temp != null) {
             System.out.print(temp.data + "->");
             temp = temp.next;
