@@ -1,23 +1,24 @@
 package LinkedListScaler;
 
 public class MergeLL {
-    public static Node merge(Node a, Node b){
-        if(a == null){
+    public static Node merge(Node a, Node b) {
+        if (a == null) {
             return b;
         }
-        if(b == null){
+        if (b == null) {
             return a;
         }
-        Node head ;
-        if(a.data<=b.data){
-            head=a;
-            head.next = merge(a.next,b);
-        }else{
+        Node head;
+        if (a.data <= b.data) {
+            head = a;
+            head.next = merge(a.next, b);
+        } else {
             head = b;
-            head.next = merge(a,b.next);
+            head.next = merge(a, b.next);
         }
         return head;
     }
+
     public static void main(String[] args) {
         Node a = new Node();
         a.add(33);
@@ -30,7 +31,7 @@ public class MergeLL {
         b.add(17);
         b.add(5);
 
-        Node temp = merge(a.getHead(),b.getHead());
+        Node temp = merge(a.getHead(), b.getHead());
         a.print(temp);
 
     }
