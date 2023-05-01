@@ -9,14 +9,14 @@ import java.util.Stack;
 //output arr=[-1,1,1,4,1,3]
 public class NearestSmaller {
     public static void main(String[] args) {
-        int[] input1 = { 2, 5, 10, 6, 3, 4, 1 };
+        int[] input1 = {2, 5, 10, 6, 3, 4, 1};
         System.out.println(outputFromRight(input1));
 
         // deprecated array declaration
-        int[] input2 = new int[] { 10, 9, 6, 5, 3, 2, 1 };
+        int[] input2 = new int[]{10, 9, 6, 5, 3, 2, 1};
         System.out.println(outputFromRight(input2));
 
-        int[] input3 = { 1, 2, 3, 4, 5, 6 };
+        int[] input3 = {1, 2, 3, 4, 5, 6};
         System.out.println(outputFromRight(input3));
     }
 
@@ -24,12 +24,9 @@ public class NearestSmaller {
         Stack<Integer> stack = new Stack<>();
         ArrayList<Integer> list = new ArrayList<>();
         for (int x : arr) {
-            while (!stack.isEmpty() && stack.peek() >= x)
-                stack.pop();
-            if (stack.empty())
-                list.add(-1);
-            else
-                list.add(stack.peek());
+            while (!stack.isEmpty() && stack.peek() >= x) stack.pop();
+            if (stack.empty()) list.add(-1);
+            else list.add(stack.peek());
             stack.push(x);
         }
         return list.toString();
@@ -42,12 +39,9 @@ public class NearestSmaller {
         int N = arr.length;
         for (int i = N - 1; i >= 0; i--) {
             int x = arr[i];
-            while (!stack.isEmpty() && stack.peek() >= x)
-                stack.pop();
-            if (stack.empty())
-                list.add(-1);
-            else
-                list.add(stack.peek());
+            while (!stack.isEmpty() && stack.peek() >= x) stack.pop();
+            if (stack.empty()) list.add(-1);
+            else list.add(stack.peek());
             stack.push(x);
         }
         Collections.reverse(list);

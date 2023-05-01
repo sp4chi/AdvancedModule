@@ -19,7 +19,7 @@ public class ValidParenthesis {
 
     }
     public static void main(String[] args) {
-        String input="((1+1)/(3*3)";
+        String input="(]}])}";
         System.out.println(check(input));
     }
 }
