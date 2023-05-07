@@ -5,6 +5,35 @@ import java.util.Collections;
 import java.util.Stack;
 
 public class FindMaxHistogramArea {
+    //using brute force
+    public static int largestRectangleBrute(int[] A) {
+        int N = A.length;
+        int max = 0;
+        for (int i = 0; i < N; i++) {
+            int temp = A[i];
+            int width = 1;
+
+            int area ;
+            if (i == N - 1) {
+                max = Math.max(max, temp * A[i]);
+            }
+            int k = i + 1;
+            while (k < N && temp <= A[k]) {
+                width++;
+                k++;
+            }
+            k = i - 1;
+            while (k >= 0 && temp <= A[k]) {
+                width++;
+                k--;
+            }
+
+            area = width * temp;
+            max = Math.max(max, area);
+        }
+        return max;
+    }
+
     //function to find out the largest area enclosed under the histogram
     static int largestRectangle(int[] A) {
         int N = A.length;
@@ -56,6 +85,6 @@ public class FindMaxHistogramArea {
         int[] A = {2, 4, 3, 4, 5, 1};
         System.out.println("List of indexes " + NearestSmallestToLeft(A));
         System.out.println("List if indexes " + NearestSmallestToRight(A));
-        System.out.println("Largest rectangle enclosed is " + largestRectangle(A));
+        System.out.println("Largest rectangle enclosed is " + largestRectangleBrute(A));
     }
 }
