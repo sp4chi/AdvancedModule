@@ -37,12 +37,12 @@ public class FindMaxHistogramArea {
     //function to find out the largest area enclosed under the histogram
     static int largestRectangle(int[] A) {
         int N = A.length;
-        ArrayList<Integer> P1 = NearestSmallestToLeft(A);
-        ArrayList<Integer> P2 = NearestSmallestToRight(A);
+        ArrayList<Integer> left = NearestSmallestToLeft(A);
+        ArrayList<Integer> right = NearestSmallestToRight(A);
         int largest = 0;
         for (int i = 0; i < N; i++) {
             int height = A[i];
-            int width = P2.get(i) - P1.get(i) - 1;
+            int width = right.get(i) - left.get(i) - 1;
             int area = height * width;
             largest = Math.max(largest, area);
         }
@@ -70,14 +70,12 @@ public class FindMaxHistogramArea {
         int N = A.length;
         Stack<Integer> stack = new Stack<>();
         ArrayList<Integer> listOfIndexes = new ArrayList<>(N);
-        int k = 0;
         for (int i = N - 1; i >= 0; i--) {
             int temp = A[i];
             while (!stack.empty() && A[stack.peek()] >= temp) stack.pop();
-            if (stack.empty()) listOfIndexes.add(N - k);
+            if (stack.empty()) listOfIndexes.add(N);
             else listOfIndexes.add(stack.peek());
             stack.push(i);
-            k++;
         }
         Collections.reverse(listOfIndexes);
         return listOfIndexes;
@@ -87,6 +85,6 @@ public class FindMaxHistogramArea {
         int[] A = {2, 4, 1, 3, 4, 5};
         System.out.println("List of indexes " + NearestSmallestToLeft(A));
         System.out.println("List if indexes " + NearestSmallestToRight(A));
-        System.out.println("Largest rectangle enclosed is " + largestRectangleBrute(A));
+        System.out.println("Largest rectangle enclosed is " + largestRectangle(A));
     }
 }
