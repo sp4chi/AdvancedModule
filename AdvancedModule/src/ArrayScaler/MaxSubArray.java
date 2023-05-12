@@ -4,14 +4,13 @@ public class MaxSubArray {
     public static int[] maxSubArray(int[] A) {
         int N = A.length;
         int maxSoFar = 0;
-        int idx = -1;
         int maxSize = Integer.MIN_VALUE;
 
         //looping to find max
         for (int value : A) {
             if (value >= 0) {
                 maxSoFar++;
-                maxSize = Math.max(maxSize, maxSoFar);
+                maxSize=Math.max(maxSize,maxSoFar);
             } else {
                 maxSoFar = 0;
             }
@@ -19,6 +18,7 @@ public class MaxSubArray {
 
         //looping to find the first largest sub-array in case more than one exist
         int k = 0;
+        int idx = -1;
         for (int i = 0; i < N; i++) {
             if (A[i] >= 0) {
                 k++;
@@ -31,6 +31,7 @@ public class MaxSubArray {
             }
 
         }
+
         int[] out = new int[maxSize];
         int j = 0;
         while (j < maxSize) {
