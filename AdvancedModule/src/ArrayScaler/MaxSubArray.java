@@ -23,11 +23,7 @@ public class MaxSubArray {
             if (A[i] >= 0) {
                 k++;
                 if (k == maxSize) {
-                    if (k < i) {
-                        idx = Math.abs(k - i) + 1;
-                    } else {
-                        idx = Math.abs(k - i - 1);
-                    }
+                    idx = Math.abs(k - i - 1);
                     break;
                 }
             } else {
@@ -46,7 +42,7 @@ public class MaxSubArray {
     }
 
     //Scaler solution
-    public static int[] solve(int[] A){
+    public static int[] solve(int[] A) {
         int size = 0, left = 0, right = 0;
         for (int l = -1, r = 0; r < A.length; r++) {
             if (A[r] >= 0) {
