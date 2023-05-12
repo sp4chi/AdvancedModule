@@ -8,8 +8,8 @@ public class MaxSubArray {
         int maxSize = Integer.MIN_VALUE;
 
         //looping to find max
-        for (int i = 0; i < N; i++) {
-            if (A[i] >= 0) {
+        for (int value : A) {
+            if (value >= 0) {
                 maxSoFar++;
                 maxSize = Math.max(maxSize, maxSoFar);
             } else {
@@ -44,37 +44,24 @@ public class MaxSubArray {
         }
         return out;
     }
+
+    //Scaler solution
     public static int[] solve(int[] A){
-        int N=A.length;
-
-        // Step 1 : Carry forword
-        int count=0,finalCount=0;   // to count elements.
-        int start=0,finalStart=0;   // to note index positions.
-
-        for (int i=0; i<N; i++){
-            if (A[i]>=0){               // Positive Value
-                count++;
-                if (finalCount<count){  // finalCount less than count
-                    finalCount=count;
-                    finalStart=start;
+        int size = 0, left = 0, right = 0;
+        for (int l = -1, r = 0; r < A.length; r++) {
+            if (A[r] >= 0) {
+                if (size < r - l) {
+                    size = r - l;
+                    left = l;
+                    right = r;
                 }
-            }
-            if (A[i]<0){                // Nagative Value
-                count=0;
-                if (i+1!=N){            // Edge case
-                    start=i+1;
-                }
+            } else {
+                l = r;
             }
         }
-
-        // Step 2 : Creating an array of size 'finalCount'.
-        int[] out= new int[finalCount];
-        for (int i=0; i<finalCount; i++) {
-            out[i]=A[i+finalStart];
-        }
-
-
-        return out;
+        int[] ans = new int[size];
+        for (int i = left + 1; i <= right; i++) ans[i - left - 1] = A[i];
+        return ans;
     }
 
     public static void main(String[] args) {
