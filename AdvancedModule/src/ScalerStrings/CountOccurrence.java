@@ -1,8 +1,8 @@
 package ScalerStrings;
 
-public class CountOccurence {
+public class CountOccurrence {
     //count occurrences of "bob" in given String
-    public static int occurence(String A){
+    public static int occurrence(String A){
         int N = A.length();
         int cnt = 0;
         int i = 0 ;
@@ -21,6 +21,6 @@ public class CountOccurence {
 
     public static void main(String[] args) {
         String A = "bobob";
-        System.out.println(occurence(A));
+        System.out.println(occurrence(A));
     }
 }
