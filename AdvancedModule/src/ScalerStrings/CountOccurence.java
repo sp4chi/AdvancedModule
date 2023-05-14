@@ -11,8 +11,7 @@ public class CountOccurence {
                 cnt++;
                 int left = A.indexOf("bob");
                 int right = left+1;
-                String temp = A.substring(right);
-                A = temp;
+                A = A.substring(right);
             }else{
                 i++;
             }
