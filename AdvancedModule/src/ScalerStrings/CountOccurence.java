@@ -1,7 +1,7 @@
 package ScalerStrings;
 
 public class CountOccurence {
-    //count ouccurences of "bob" in given String
+    //count occurrences of "bob" in given String
     public static int occurence(String A){
         int N = A.length();
         int cnt = 0;
