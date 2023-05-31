@@ -32,13 +32,11 @@ public class MinDistanceBtwDuplicates {
             }
             map.put(A[i],i);
         }
-        if(min!=N) //if no duplicates present
-            return min;
-
-        return -1;
+        return min == Integer.MAX_VALUE ? - 1: min;
     }
     public static void main(String[] args) {
         int[] A={1,2,3,4,1,2,3,1};
         System.out.println(minDistanceUsingHashing(A));
+        System.out.println(minDistanceBrute(A));
     }
 }
