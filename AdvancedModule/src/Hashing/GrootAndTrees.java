@@ -23,24 +23,26 @@ public class GrootAndTrees {
     Explanation:
     There are 3 distinct numbers in the array which are 1,2,3.
     Out of these, only 2 and 3 occur twice. Therefore, the answer is sum of 2 and 3 which is 5.*/
-    public static int selectTrees(int[] A, int B) {
+    public static int selectTrees(int[] A, int B ) {
         final int[] sum = {0};
         final int[] cnt = {-1};
 
+
+        //building hashmap
         HashMap<Integer, Integer> map = new HashMap<>();
         for (int i : A) {
             map.put(i, map.getOrDefault(i, 0) + 1);
         }
 
-
+        //traversing hashmap and adding value to sum acc. to condition
         map.forEach((key, value) -> {
-
             if (value == B) {
                 sum[0] += key;
                 sum[0] %= 1000000007;
                 cnt[0]++;
             }
         });
+
         return cnt[0] == -1 ? -1 : sum[0];
     }
 
