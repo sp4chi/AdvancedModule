@@ -6,7 +6,7 @@ public class LCM {
         int small=Math.min(a,b);
         int i=large;
         while(i%small!=0){
-            i+=large;
+            i += large;
         }
         return i;
     }
