@@ -55,6 +55,8 @@ public class AntiDiagonals {
             }
             System.out.println();
         }
+
+        antiDiagonals(A);
         ArrayList<ArrayList<Integer>> B = antiDiagonalsWithList(A);
         for(int i=0;i<5;i++){
             for(int j:B.get(i)){
