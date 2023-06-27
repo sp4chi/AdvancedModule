@@ -7,7 +7,7 @@ public class MergeSort {
     }
     public static void mergeSort(int[] A, int start, int end){
         //base case
-        if(start>=end)
+        if(end-start+1 == 1)
             return;
         //recursive case
         int mid=(start+end)/2;
@@ -42,13 +42,16 @@ public class MergeSort {
             temp[k] = A[j];
             j++;k++;
         }
-        for(int x=start;x<=end;x++){
-            A[x] = temp[x];
-        }
+
+        /* for(int x=start;x<=end;x++){
+                A[x] = temp[x];
+         }*/
+        //same as the above loop
+        if (end + 1 - start >= 0) System.arraycopy(temp, start, A, start, end + 1 - start);
     }
 
     public static void main(String[] args) {
-        int[] A={2,4,3,1,5,7,6};
+        int[] A={2,4,3,1,5,7,6,-19};
         mergeSort(A);
         for(int i: A){
             System.out.print(i+" ");
