@@ -10,7 +10,7 @@ public class MaxSubArray {
         for (int value : A) {
             if (value >= 0) {
                 maxSoFar++;
-                maxSize=Math.max(maxSize,maxSoFar);
+                maxSize = Math.max(maxSize, maxSoFar);
             } else {
                 maxSoFar = 0;
             }
@@ -35,9 +35,7 @@ public class MaxSubArray {
         int[] out = new int[maxSize];
         int j = 0;
         while (j < maxSize) {
-            out[j] = A[idx];
-            j++;
-            idx++;
+            out[j++] = A[idx++];
         }
         return out;
     }
@@ -62,7 +60,7 @@ public class MaxSubArray {
     }
 
     public static void main(String[] args) {
-        int[] A = {-5, 6, 1, 9, -8, -7, 0};
+        int[] A = {5, 6, -1, 8, 7};
         int[] B = maxSubArray(A);
         for (int i : B) {
             System.out.print(i + " ");
