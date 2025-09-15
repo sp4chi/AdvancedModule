@@ -2,9 +2,18 @@ package DynamicProgramming;
 //Given N stairs, find how many ways to reach top taking 1,2 and 3 steps only?
 //top down
 public class LadderClimbing {
-    static int timesCalled = 0;
+    static int recursiveTimesCalled=0;
+    static int topDownTimesCalled = 0;
+    static int iterations = 0;
+
+    public static int climb(int N){
+        recursiveTimesCalled++;
+        if (N == 0 || N == 1) return 1;
+        if ( N < 0 ) return 0;
+        return climb(N-1) + climb(N-2) + climb(N-3);
+    }
     public static int climbTopDown(int N, int[] dp) {
-        timesCalled++;
+        topDownTimesCalled++;
         if (N == 0) return 1;
 
         if (N < 0) return 0;
@@ -28,15 +37,17 @@ public class LadderClimbing {
         dp[1] = 1;
         dp[2] = 2 ;
         for (int i = 3; i < N; i++) {
+            iterations++;
             dp[i] = dp[i - 1] + dp[i - 2] +  dp[i - 3];
         }
         return dp[N];
     }
 
     public static void main(String[] args) {
-        int N = 5;
+        int N = 10 ;
         int[] dp = new int[N+1];
-        System.out.println("Top Down Approach : "+climbTopDown(N,dp)+" times called "+timesCalled);
-        System.out.println("Bottom Up Approach : "+climbBottomUp(N,dp));
+        System.out.println("Recursive climbing :" + climb(N) + " times called: " + recursiveTimesCalled);
+        System.out.println("Top Down Approach : "+climbTopDown(N,dp)+" times called "+ topDownTimesCalled);
+        System.out.println("Bottom Up Approach : "+climbBottomUp(N,dp) + " iterations "+ iterations);
     }
 }
