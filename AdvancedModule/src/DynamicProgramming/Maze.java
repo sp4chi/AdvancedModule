@@ -1,12 +1,50 @@
 package DynamicProgramming;
 
 public class Maze {
+    static int recursive = 0;
+    static int topDown = 0;
     /*
         formula = M+N-2
                        C
                         M-1
      */
-    public static int paths(int[][] maze) {
+    //recursive solution
+    public static int paths(int[][] maze,int i,int j) {
+        recursive++;
+        int M = maze.length;
+        int N = maze[0].length;
+        if(i > M-1 || j > N-1 ) return 0;
+        if(i == M-1 && j == N-1) return 1;
+        return paths(maze,i+1,j) + paths(maze,i,j+1);
+    }
+
+    //Top down dp
+    public static int pathsTopDown(int[][] maze) {
+        int M = maze.length;
+        int N = maze[0].length;
+        int[][] dp = new int[M][N];
+        for (int[] row : dp) {
+            java.util.Arrays.fill(row, -1);
+        }
+        return pathsTopDownHelper(maze,0,0,dp);
+    }
+
+    public static int pathsTopDownHelper(int[][] maze, int i, int j, int[][] dp) {
+        topDown++;
+        int M = maze.length;
+        int N = maze[0].length;
+
+        if(i > M-1 || j > N-1 ) return 0;
+        if(i == M-1 && j == N-1) return 1;
+
+        if(dp[i][j] != -1) return dp[i][j];
+        dp[i][j] = pathsTopDownHelper(maze,i+1,j,dp) +
+                pathsTopDownHelper(maze,i,j+1,dp);
+        return dp[i][j];
+    }
+
+
+    public static int pathsBottomUp(int[][] maze) {
         int M = maze.length;
         int N = maze[0].length;
         int[][] dp = new int[M][N];
@@ -28,8 +66,8 @@ public class Maze {
     public static void main(String[] args) {
         int M = 3, N = 4;
         int[][] maze = new int[M][N];
-        int[] start = {0, 0};
-        int[] end = {M - 1, N - 1};
-        System.out.println(paths(maze));
+        System.out.println(paths(maze,0,0)+" "+ recursive);
+        System.out.println(pathsTopDown(maze)+" "+ topDown);
+        System.out.println(pathsBottomUp(maze));
     }
 }
