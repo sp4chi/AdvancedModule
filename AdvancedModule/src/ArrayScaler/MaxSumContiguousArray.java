@@ -1,4 +1,4 @@
-package ScalerMatrix;
+package ArrayScaler;
 
 public class MaxSumContiguousArray {
     public static int maxSum(int[] A) {

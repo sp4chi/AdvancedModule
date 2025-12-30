@@ -1,7 +1,7 @@
 package ArrayScaler;
-/*
-** prefix-sum can also be used to calculate prefix-xor,
-** which can be used to find the xor of values in the index range L to R.
+/**
+* prefix-sum can also be used to calculate prefix-xor,
+* which can be used to find the xor of values in the index range L to R.
 */
 public class XorPrefixSum {
     static int prefixXorSum(int[] xor, int l, int r) {
