@@ -1,39 +1,48 @@
 package Graphs;
 
-import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.*;
 
-public class DFS {
-    public static void dfs(int node, boolean[] visited, ArrayList<Integer>[] adList){
-        //1. if node visited return
-        if(visited[node]){
-            return;
-        }
+public class BFS {
+    public static void bfs(int startNode, ArrayList<Integer>[] adList, boolean[] visited){
+        //1. Initialize - create queue
+        Queue<Integer> queue = new LinkedList<>();
 
-        //2. else mark it as true
-        visited[node] = true;
-        //3. process it -> print the node
-        System.out.println("visited node: "+node);
+        //2.1 mark start node as visited
+        visited[startNode] = true;
 
+        //2.2 Process node
+        System.out.println(startNode);
 
-        //4. extract list from the array
-        ArrayList<Integer> list = adList[node];
+        //2.3 Push start node to queue
+        queue.add(startNode);
 
-        //5. dfs on its neighbours
-        for(int neighbour : list){
+        //3. while queue is not empty, pop a node, repeat 2 for its neighbours
+        while (!queue.isEmpty()){
 
-            //5.1 optional check to avoid unnecessary function calls
-            if(!visited[neighbour]) {
-                dfs(neighbour, visited, adList);
+            //3.1 pop node
+            int node = queue.poll();
+
+            //3.2 traverse neighbour list
+            for(int neighbour : adList[node]){
+
+                if(!visited[neighbour]){
+
+                    //3.3 Mark neighbour as visited
+                    visited[neighbour] = true;
+
+                    //3.4 Process node
+                    System.out.println(neighbour);
+
+                    //3.5 Push neighbour to queue
+                    queue.add(neighbour);
+                }
+
             }
         }
-        /*
-         * checking type of adList[node], ** debugging ignore **
-         * System.out.println(list.getClass().getName());
-         */
+
+        //chatgpt - https://chatgpt.com/share/69615947-5364-800a-9cff-b0d06fcea8b7
     }
     public static void main(String[] args) {
-
         //declaring the adjacency list
         ArrayList<Integer>[] adList = new ArrayList[12];
 
@@ -80,17 +89,17 @@ public class DFS {
         int N = adList.length;
         boolean[] visited = new boolean[N];
         Arrays.fill(visited, false);
-        for(boolean b : visited){
+        /*for(boolean b : visited){
             System.out.print(b+" ,");
-        }
+        }*/
 
         int startNode = 0;
-        dfs(startNode,visited,adList);
+        bfs(0,adList,visited);
 
         //for disconnected graph
         /*for (int i = 0; i < N; i++) {
             if (!visited[i]) {
-                dfs(i, visited, adList);
+                bfs(i, adList, visited);
             }
         }*/
 
