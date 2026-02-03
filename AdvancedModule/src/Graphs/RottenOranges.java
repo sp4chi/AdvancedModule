@@ -14,7 +14,8 @@ public class RottenOranges {
             Arrays.fill(row, -1);
         }
 
-        int maxDays = -1;
+        int maxDays = 0;
+        int freshOranges = 0;
         Queue<int[]> queue = new LinkedList<>();
 
         for(int i=0;i<N;i++){
@@ -22,17 +23,21 @@ public class RottenOranges {
                 if(oranges[i][j] == 2){
                     distance[i][j] = 0;
                     queue.add(new int[]{i,j});
+                } else if (oranges[i][j] == 1) {
+                    freshOranges++; //calc total fresh oranges
                 }
             }
         }
+
+
+        int[] dr = {1,-1,0,0};
+        int[] dc = {0,0,1,-1};
 
         while (!queue.isEmpty()){
             int[] cell = queue.poll();
             int x = cell[0];
             int y = cell[1];
 
-            int[] dr = {1,-1,0,0};
-            int[] dc = {0,0,1,-1};
 
             for(int i=0;i<4;i++){
                 int X = x + dr[i];
@@ -41,8 +46,8 @@ public class RottenOranges {
                 if(X>=0 && X<N && Y>=0 && Y<M && oranges[X][Y] == 1 && distance[X][Y] == -1){
                     distance[X][Y] = distance[x][y] + 1;
                     queue.add(new int[]{X,Y});
-
                     maxDays = Math.max(maxDays,distance[X][Y]);
+                    freshOranges--; // decrement fresh oranges after they rot
                 }
             }
         }
@@ -54,7 +59,8 @@ public class RottenOranges {
             }
         }*/
 
-        return maxDays;
+        // check needed for case - no fresh oranges in the given array -> return 0
+        return freshOranges == 0 ? maxDays: 0;
 
     }
     public static void main(String[] args) {
