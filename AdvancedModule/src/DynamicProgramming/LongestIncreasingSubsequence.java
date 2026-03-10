@@ -35,8 +35,57 @@ public class LongestIncreasingSubsequence {
 
         return ans;
     }
+    /*public static int firstElementGreaterThanCurr(int[] tails,int tailElements, int curr){
+        int N = tails.length;
+        int left = 0;
+        int right = tailElements-1;
+
+
+        while(left < right){
+            int mid  = left + (right - left)/2;
+            if(tails[mid] > curr){
+                return mid;
+            }else if(tails[mid] < curr){
+                left = mid;
+            }
+        }
+
+        return idx;
+    }*/
+    public static int lcsBinary(int[] arr){
+        int N = arr.length;
+        int[] tails = new int[N];
+        tails[0] = arr[0];
+        int tailSize = 1;
+
+        for(int i=1;i<N;i++){
+
+             int left = 0;
+             int right = tailSize - 1;
+
+             while(left <= right){
+                 int mid = left + (right - left)/2;
+
+                 if(tails[mid] >= arr[i]){
+                     tails[mid] = arr[i];
+                     break;
+                 }else{
+                     right = mid - 1;
+                 }
+             }
+             if(arr[i] > tails[tailSize-1]){
+                 tails[tailSize] = arr[i];
+                 tailSize++;
+             }
+        }
+
+        return tailSize;
+    }
     public static void main(String[] args) {
-        int[] arr = {9,2,4,3,10};
+        //int[] arr = {9,2,4,3,10};
+        //int[] arr = {3,4,1,2,8};
+        int[] arr = {10,9,2,5,3,7,101,18};
         System.out.println(lcs(arr));
+        System.out.println(lcsBinary(arr));
     }
 }
