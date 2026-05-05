@@ -11,7 +11,9 @@ public class MedianOfSortedArray {
         int half = (1 + M + N) / 2;
         // int mid = half - 1;
         // int i = 1;
-        int ALeft = Integer.MIN_VALUE, ARight = Integer.MAX_VALUE, BLeft = Integer.MIN_VALUE,
+        int ALeft = Integer.MIN_VALUE,
+                ARight = Integer.MAX_VALUE,
+                BLeft = Integer.MIN_VALUE,
                 BRight = Integer.MAX_VALUE;
 
         int left = 0;
@@ -63,9 +65,11 @@ public class MedianOfSortedArray {
     }
 
     public static void main(String[] args) {
-        int[] nums1={1,3,8};
-        int[] nums2={2,9,10,11};
+        //int[] nums1={1,3,8};
+        //int[] nums2={2,9,10,11};
 
+        int[] nums1 = {-50, -41, -40, -19, 5, 21, 28};
+        int[] nums2 = {-50, -21, -10};
         System.out.println(findMedianSortedArrays(nums1,nums2));
     }
 }
