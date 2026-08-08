@@ -1,7 +1,73 @@
 package DynamicProgramming;
 
+// pick a subsequence of largest length such that all
+// elements are in increasing order
+
 public class LongestIncreasingSubsequence {
-    //pick a subsequence of largest length such that all elements are in increasing order
+
+    public static int LIS(int[] A, int prevIdx, int currentIdx) {
+        // init: sequence, prev: -1(sentinel), start: 0
+        // if currentIdx == len(sequence) return 0
+        // do not select currentIdx : LIS(arr, prevIdx, currentIdx + 1
+        // select currentIdx : LIS(arr, currentIdx, currentIdx + 1)
+        // return max(do not select, select)
+
+        if (currentIdx == A.length) {
+            return 0;
+        }
+
+        int skip = LIS(A, prevIdx, currentIdx + 1);
+
+        int select = 0;
+        if (prevIdx == -1 || A[currentIdx] > A[prevIdx]) {
+            select = 1 + LIS(A, currentIdx, currentIdx + 1);
+        }
+
+        return Math.max(skip, select);
+    }
+
+    public static int LISWithPruning(int[] nums, int currIdx, int N) {
+        // generate all subsequences and find the longest increasing subsequence
+        // 2^n subsequences, finding the longest increasing sub - n^2.
+        // Total - 2^n * n^2
+        // strat - generate subsequence of len 1 to N and for each length
+        // find lcs and keep track of max
+        // ** When arr[currIdx] < arr[currIdx] dfs till N - 1
+
+        if (N > nums.length - 1) return 1;
+
+        if (N == nums.length - 1) {
+            if (nums[currIdx] < nums[N]) {
+                return 1;
+            }
+
+            return 0;
+        }
+
+        int a, b = 0;
+
+        if (nums[currIdx] < nums[N]) {
+            b = 1 + LIS(nums, N, N + 1);
+        }
+
+        a = LIS(nums, currIdx, N + 1);
+
+
+        return Math.max(a, b);
+    }
+
+    public static int LISBruteBottom(int[] A, int N) {
+
+        int ans = 0;
+        for (int i = A.length - 1; i > N; i--) {
+            if (A[i] > A[N]) {
+                ans = Math.max(ans, 1 + LISBruteBottom(A, i));
+            }
+        }
+        return ans;
+    }
+
+
     public static int lis(int[] arr) {
         int N = arr.length;
 
@@ -75,5 +141,17 @@ public class LongestIncreasingSubsequence {
         int[] arr = {10, 9, 2, 5, 3, 7, 101, 18};
         System.out.println(lis(arr));
         System.out.println(lisBinary(arr));
+        int max = 0;
+        for (int i = 0; i < arr.length; i++) {
+            max = Math.max(max, 1 + LISWithPruning(arr, i, i + 1));
+        }
+        System.out.println(max);
+        System.out.println(LIS(arr, -1, 0));
+
+        int maxx = 0;
+        for (int i = 0; i < arr.length; i++) {
+            maxx = Math.max(maxx, 1 + LISBruteBottom(arr, i));
+        }
+        System.out.println(maxx);
     }
 }

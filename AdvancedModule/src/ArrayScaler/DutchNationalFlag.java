@@ -1,8 +1,8 @@
 package ArrayScaler;
 
-public class SortItUp {
-    //You are given an array arr, consisting of only zeroes, ones and twos.
-    //Sort the same array in-place and return it. Do not create a new array.
+public class DutchNationalFlag {
+    // You are given an array arr, consisting of only zeroes, ones and twos.
+    // Sort the same array in-place and return it. Do not create a new array.
     public static int[] sortIt(int[] A) {
         int N = A.length;
         int left = 0;

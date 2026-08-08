@@ -31,7 +31,7 @@ public class QuickSort {
 
     public static void main(String[] args) {
         //int[] A={2,4,3,1,5,7,6};
-        int[] A={6,2,8,5,1,4,3,7,6};
+        int[] A={6,2,8,5,1,4,3,7,6}; // 2,5,1,4,3,6,6,8,7
         quickSort(A);
         for(int i: A){
             System.out.print(i+" ");

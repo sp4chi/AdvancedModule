@@ -16,24 +16,24 @@ public class BFS {
         //2.3 Push start node to queue
         queue.add(startNode);
 
-        //3. while queue is not empty, pop a node, repeat 2 for its neighbours
+        //3. while queue is not empty, pop a node, repeat 2 for its neighbors
         while (!queue.isEmpty()){
 
             //3.1 pop node
             int node = queue.poll();
 
-            //3.2 traverse neighbour list
+            //3.2 traverse neighbor list
             for(int neighbour : adList[node]){
 
                 if(!visited[neighbour]){
 
-                    //3.3 Mark neighbour as visited
+                    //3.3 Mark neighbor as visited
                     visited[neighbour] = true;
 
                     //3.4 Process node
                     System.out.println(neighbour);
 
-                    //3.5 Push neighbour to queue
+                    //3.5 Push neighbor to queue
                     queue.add(neighbour);
                 }
 
