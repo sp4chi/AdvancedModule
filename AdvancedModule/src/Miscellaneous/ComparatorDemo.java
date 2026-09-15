@@ -1,9 +1,6 @@
 package Miscellaneous;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 
 class Heroes implements Comparable<Heroes> {
@@ -63,12 +60,12 @@ public class ComparatorDemo {
         /**
          * sort based on age
          */
-        List<Heroes> myDuelist = new ArrayList<>();
-
-        Collections.addAll(myDuelist, new Heroes("Phoenix", 10),
+        List<Heroes> myDuelist = Arrays.asList(new Heroes("Phoenix", 10),
                 new Heroes("Reyna", 20),
                 new Heroes("Jett", 18),
-                new Heroes("Yoru", 12));
+                new Heroes("Yoru", 12)
+        );
+
         Comparator<Heroes> duelistCom = new Comparator<Heroes>() {
             @Override
             public int compare(Heroes o1, Heroes o2) {

@@ -1,6 +1,6 @@
 package Searching;
 
-import LCM.LCM;
+import Math.LCM;
 
 public class MagicalNumber {
     static int mod = 1000000007;
