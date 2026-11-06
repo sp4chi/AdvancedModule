@@ -30,10 +30,9 @@ public class TopologicalSort{
                 indegree[v]++;  // if x is nbr of y then a directed edge exists from y -> x
             }
         }
-
-        // 3. put node's with 0 indegree to queue
         Queue<Integer> queue = new LinkedList<>();
 
+        // 3. put node's with 0 indegree to queue
         for(int i=0;i<indegree.length;i++){
             if(indegree[i] == 0){
                 queue.add(i);
